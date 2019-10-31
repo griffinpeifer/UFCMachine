@@ -1,0 +1,126 @@
+{% extends "base_template.html" %}
+
+{% block title %} Main Page {% endblock %}
+
+{% block main %}
+
+<div class="container mx-auto mt-5" >
+    <div class="row mx-auto" style="width: 600px;">
+        <form action="/main_page" method="POST">
+
+            <div class="form-group float-left">
+                <h1 class="text-danger text-center">Red Corner</h1>
+                <input type="text" class="form-control text-danger" id="fighter1" name="fighter1" placeholder="Red corner fighter">
+            </div>
+
+            <button type="submit" class="btn btn-outline-danger float-left mx-5 ">Fight!</button>
+
+            <div class="form-group float-right">
+                <h1 class="text-info text-center">Blue Corner</h1>
+                <input type="text" class="form-control text-info" id="fighter2" name="fighter2" placeholder="Blue corner fighter">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% if red %}
+
+<div class="container-fluid mt-5">
+    <div class="row">
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <h1 class="text-center text-danger">{{ red_name }}</h1>
+            <h1 class="text-center text-danger">{{ red }}%</h1>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4 text-center text-white">
+
+            <h1 class="text-warning text-center">Tale Of The Tape</h1>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ red_name }}</div>
+                <div class="col-sm" >Name</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{ blue_name }}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ r_weight_class }}</div>
+                <div class="col-sm" >Weight Class</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{b_weight_class}}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ r_age }}</div>
+                <div class="col-sm" >Age</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{ b_age }}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ r_height }}</div>
+                <div class="col-sm" >Height</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{ b_height }}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ r_weight }}</div>
+                <div class="col-sm" >Weight (lbs)</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{ b_weight }}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{ r_reach }}</div>
+                <div class="col-sm" >Reach (in)</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{ b_reach }}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{r_wins}}</div>
+                <div class="col-sm" >Wins</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{b_wins}}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{r_losses}}</div>
+                <div class="col-sm" >Losses</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{b_losses}}</div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm" style="border:1px solid #DC143C">{{r_draws}}</div>
+                <div class="col-sm" >Draws</div>
+                <div class="col-sm" style="border:1px solid #00BFFF">{{b_draws}}</div>
+            </div>
+            <br>
+
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 ">
+            <h1 class="text-center text-info">{{ blue_name }}</h1>
+            <h1 class="text-center text-info">{{ blue }}%</h1>
+        </div>
+
+    </div>
+</div>
+
+{% if red > blue %}
+    <h1 class="text-center text-success">{{ red_name }} is the winner!</h1>
+{% endif %}
+
+{% if blue > red %}
+    <h1 class="text-center text-success">{{ blue_name }} is the winner!</h1>
+{% endif %}
+
+{% endif %}
+
+
+
+
+{% endblock %}

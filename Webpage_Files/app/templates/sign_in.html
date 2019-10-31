@@ -1,0 +1,49 @@
+{% extends "base_template.html" %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block main %}
+{#<audio autoplay>#}
+{#    <source src="https://www.computerhope.com/jargon/m/example.mp3" />#}
+{#</audio>#}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1 class="text-white">Sign In</h1>
+      <hr class="bg-white">
+
+      <div class="jumbotron text-center mx-auto bg-transparent text-white">
+        <h1 > Welcome to UFC fight predict.</h1>
+        <h3 > Go ahead and login to begin making predictions.</h3>
+
+      {% if access_granted %}
+      <p class="text-success float-right">{{ access_granted }}</p>
+      {% endif %}
+
+      <form action="/login" method="POST" class="mx-auto">
+
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Please enter your username">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Please enter your password">
+        </div>
+
+        <button type="submit" class="btn btn-danger float-left">Login</button>
+        <a href="/signup" class="btn btn-danger float-right">Register here </a>
+
+        {% if feedback %}
+        <p class="text-danger float-right">{{ feedback }}</p>
+        {% endif %}
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
