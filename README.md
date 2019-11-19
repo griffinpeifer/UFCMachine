@@ -6,7 +6,7 @@ The model behind UFCMachine utilizes a Keras driven neural network with eight la
 
 # Approach
 
-After finding a dataset on https://www.kaggle.com/ containing all UFC fights since 1993, we were inspired to create a predictive model which could provide us with the most probable winner based on which statistics were most highly correlated to winning past matches.
+After finding the dataset https://www.kaggle.com/rajeevw/ufcdata containing all UFC fights since 1993, we were inspired to create a predictive model which could provide us with the most probable winner based on which statistics were most highly correlated to winning past matches.
 
 Scraping
 -------------
