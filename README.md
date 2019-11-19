@@ -12,9 +12,17 @@ Scraping
 -------------
 In order to give website users the ability to predict future fights based on searching fighter names instead of statistics, we scraped the career stats for every fighter on the UFC roster from http://ufcstats.com/statistics/fighters. These stats were put into a dataset which related career statistics such as fight record, height, weight, reach, significant strikes landed per minute, and more for each fighters name. This scraping method can be seen in UFC_scraping.ipynb.
 
+![df_fighters](https://github.com/griffinpeifer/UFCMachine/blob/master/df_fighters.PNG)
+
 Cleaning
 ------------
 Once all fighters and their career stats were input into a dataframe, the data was cleaned and all fighters which were missing data fields were eliminated from the dataset, yielding 1672 fighters. This was an acceptable refinement because the fighters who were missing data tended to be older, retired fighters, and as a result they won't have much applicability to a future fight predictor. 
+
+![df_matches with names](https://github.com/griffinpeifer/UFCMachine/blob/master/df_matches_names.PNG)
+
+A value of 1 in the 'result' column indicates a win by the 'Red' fighter.
+
+![df_matches with stat differential](https://github.com/griffinpeifer/UFCMachine/blob/master/df_matches_differential.PNG)
 
 Model Development
 -------------
