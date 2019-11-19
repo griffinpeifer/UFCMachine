@@ -16,7 +16,7 @@ In order to give website users the ability to predict future fights based on sea
 
 Cleaning
 ------------
-Once all fighters and their career stats were input into a dataframe, the data was cleaned and all fighters which were missing data fields were eliminated from the dataset, yielding 1672 fighters. This was an acceptable refinement because the fighters who were missing data tended to be older, retired fighters, and as a result they won't have much applicability to a future fight predictor. 
+Once all fighters and their career stats were input into a dataframe, the data was cleaned and all fighters who had missing data fields were eliminated from the dataset, yielding 1672 fighters. This was an acceptable refinement because the fighters who were missing data tended to be older, retired fighters, and as a result they won't have much applicability to a future fight predictor. 
 
 ![df_matches with names](https://github.com/griffinpeifer/UFCMachine/blob/master/df_matches_names.PNG)
 
